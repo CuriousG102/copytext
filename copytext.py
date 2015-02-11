@@ -52,6 +52,15 @@ class Row(object):
         self._columns = columns
         self._index = index
 
+    def columns(self):
+        """
+        Return the column names which can be used in a call to get item.
+        This is useful for allowing a user to add fields to certain HTML 
+        templates (such as list values where the column name is a bolded label 
+        and the cell value is its text) simply by adding another column
+        """
+        return self._columns
+
     def __getitem__(self, i):
         """
         Allow dict-style item access by index (column id), or by column name.

@@ -264,6 +264,15 @@ class Copy(object):
 
             self._copy[sheet.title] = Sheet(sheet.title, rows, columns)
 
+    def sheetNames(self):
+        names = []
+
+        for name, sheet in self._copy.items():
+            names.append(name)
+
+        return names
+
+
     def json(self):
         """
         Serialize the copy as JSON.
